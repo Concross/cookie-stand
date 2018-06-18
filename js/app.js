@@ -11,6 +11,8 @@
 
 // Display the values of each array as unordered lists in the browser
 
+var salmonCookieShops = [];
+
 // College and Pence location object literal
 var collegeAndPence = {
   storeName: 'College and Pence',
@@ -26,8 +28,8 @@ collegeAndPence.randomHourlyCustomers = function () {
 // College and Pence simulatedHourlyCookies method
 //Simulates the number of cookies sold per hour for this location
 collegeAndPence.simulatedHourlyCookies = function () {
-  var hoursOpen = 14;
-  for(var i = 0; i < hoursOpen; i ++){
+  var hoursOpen = 15;
+  for(var i = 0; i < hoursOpen; i++){
     this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
   }
 };
@@ -47,8 +49,8 @@ chandlerAnd14th.randomHourlyCustomers = function () {
 // Chandler and 14th simulatedHourlyCookies method
 //Simulates the number of cookies sold per hour for this location
 chandlerAnd14th.simulatedHourlyCookies = function () {
-  var hoursOpen = 14;
-  for(var i = 0; i < hoursOpen; i ++){
+  var hoursOpen = 15;
+  for(var i = 0; i < hoursOpen; i++){
     this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
   }
 };
@@ -68,8 +70,8 @@ fresnoAnd14th.randomHourlyCustomers = function () {
 // Fresno and 14th simulatedHourlyCookies method
 //Simulates the number of cookies sold per hour for this location
 fresnoAnd14th.simulatedHourlyCookies = function () {
-  var hoursOpen = 14;
-  for(var i = 0; i < hoursOpen; i ++){
+  var hoursOpen = 15;
+  for(var i = 0; i < hoursOpen; i++){
     this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
   }
 };
@@ -89,14 +91,14 @@ minnesotaAndBond.randomHourlyCustomers = function () {
 // Minnesota and Bond simulatedHourlyCookies method
 //Simulates the number of cookies sold per hour for this location
 minnesotaAndBond.simulatedHourlyCookies = function () {
-  var hoursOpen = 14;
-  for(var i = 0; i < hoursOpen; i ++){
+  var hoursOpen = 15;
+  for(var i = 0; i < hoursOpen; i++){
     this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
   }
 };
 
 // NE Neff and NE Williamson object literal
-var neNeffAndNEWilliamson = {
+var neffAndWilliamson = {
   storeName: 'NE Neff and NE Williamson',
   minHourlyCustomers: 2,
   maxHourlyCustomers: 16,
@@ -104,14 +106,22 @@ var neNeffAndNEWilliamson = {
   hourlyCookiesArray: []
 };
 // NE Neff and NE Williamson randomHourlyCustomers method
-neNeffAndNEWilliamson.randomHourlyCustomers = function () {
+neffAndWilliamson.randomHourlyCustomers = function () {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
 };
 // NE Neff and NE Williamson simulatedHourlyCookies method
 //Simulates the number of cookies sold per hour for this location
-neNeffAndNEWilliamson.simulatedHourlyCookies = function () {
-  var hoursOpen = 14;
-  for(var i = 0; i < hoursOpen; i ++){
+neffAndWilliamson.simulatedHourlyCookies = function () {
+  var hoursOpen = 15;
+  for(var i = 0; i < hoursOpen; i++){
     this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
   }
 };
+
+salmonCookieShops.push(collegeAndPence);
+salmonCookieShops.push(chandlerAnd14th);
+salmonCookieShops.push(fresnoAnd14th);
+salmonCookieShops.push(minnesotaAndBond);
+salmonCookieShops.push(neffAndWilliamson);
+
+console.log(salmonCookieShops);
