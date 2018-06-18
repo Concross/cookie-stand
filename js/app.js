@@ -1,15 +1,4 @@
 'use strict';
-// First, create a separate JS object literal (no constructor functions... yet) for each shop location that does the following:
-
-// Stores the min/max hourly customers, and the average cookies per customer, in object properties
-
-// Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
-
-// Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
-
-// Store the results for each location in a separate array... perhaps as a property of the object representing that location
-
-// Display the values of each array as unordered lists in the browser
 
 var salmonCookieShops = [];
 var salmonShopSectionEl = document.getElementById('salmon-shops');
@@ -239,13 +228,14 @@ neffAndWilliamson.render = function () {
 
 };
 
-
+// Push all current locations to salmonCookieShops array
 salmonCookieShops.push(collegeAndPence);
 salmonCookieShops.push(chandlerAnd14th);
 salmonCookieShops.push(fresnoAnd14th);
 salmonCookieShops.push(minnesotaAndBond);
 salmonCookieShops.push(neffAndWilliamson);
 
+// Render each location on the page in an unordered list
 for(var shop in salmonCookieShops){
   salmonCookieShops[shop].render();
 }
