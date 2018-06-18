@@ -17,10 +17,19 @@ var collegeAndPence = {
   minHourlyCustomers: 23,
   maxHourlyCustomers: 65,
   avgCookiesPerCustomer: 6.3,
+  hourlyCookiesArray: []
 };
 // College and Pence randomHourlyCustomers method
-collegeAndPence.randomHourlyCustomers = function (){
+collegeAndPence.randomHourlyCustomers = function () {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
+// College and Pence simulatedHourlyCookies method
+//Simulates the number of cookies sold per hour for this location
+collegeAndPence.simulatedHourlyCookies = function () {
+  var hoursOpen = 14;
+  for(var i = 0; i < hoursOpen; i ++){
+    this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
+  }
 };
 
 // Chandler and 14th location object literal
@@ -29,10 +38,19 @@ var chandlerAnd14th = {
   minHourlyCustomers: 3,
   maxHourlyCustomers: 24,
   avgCookiesPerCustomer: 1.2,
+  hourlyCookiesArray: []
 };
 // Chandler and 14th randomHourlyCustomers method
-chandlerAnd14th.randomHourlyCustomers = function (){
+chandlerAnd14th.randomHourlyCustomers = function () {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
+// Chandler and 14th simulatedHourlyCookies method
+//Simulates the number of cookies sold per hour for this location
+chandlerAnd14th.simulatedHourlyCookies = function () {
+  var hoursOpen = 14;
+  for(var i = 0; i < hoursOpen; i ++){
+    this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
+  }
 };
 
 // Fresno and 14th object literal
@@ -41,10 +59,19 @@ var fresnoAnd14th = {
   minHourlyCustomers: 11,
   maxHourlyCustomers: 38,
   avgCookiesPerCustomer: 3.7,
+  hourlyCookiesArray: []
 };
 // Fresno and 14th randomHourlyCustomers method
-fresnoAnd14th.randomHourlyCustomers = function() {
+fresnoAnd14th.randomHourlyCustomers = function () {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
+// Fresno and 14th simulatedHourlyCookies method
+//Simulates the number of cookies sold per hour for this location
+fresnoAnd14th.simulatedHourlyCookies = function () {
+  var hoursOpen = 14;
+  for(var i = 0; i < hoursOpen; i ++){
+    this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
+  }
 };
 
 // Minnesota and Bond object literal
@@ -53,10 +80,19 @@ var minnesotaAndBond = {
   minHourlyCustomers: 20,
   maxHourlyCustomers: 38,
   avgCookiesPerCustomer: 2.3,
+  hourlyCookiesArray: []
 };
 // Minnesota and Bond randomHourlyCustomers method
-minnesotaAndBond.randomHourlyCustomers = function() {
+minnesotaAndBond.randomHourlyCustomers = function () {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
+// Minnesota and Bond simulatedHourlyCookies method
+//Simulates the number of cookies sold per hour for this location
+minnesotaAndBond.simulatedHourlyCookies = function () {
+  var hoursOpen = 14;
+  for(var i = 0; i < hoursOpen; i ++){
+    this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
+  }
 };
 
 // NE Neff and NE Williamson object literal
@@ -65,8 +101,17 @@ var neNeffAndNEWilliamson = {
   minHourlyCustomers: 2,
   maxHourlyCustomers: 16,
   avgCookiesPerCustomer: 4.6,
+  hourlyCookiesArray: []
 };
 // NE Neff and NE Williamson randomHourlyCustomers method
-neNeffAndNEWilliamson.randomHourlyCustomers = function() {
+neNeffAndNEWilliamson.randomHourlyCustomers = function () {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
+// NE Neff and NE Williamson simulatedHourlyCookies method
+//Simulates the number of cookies sold per hour for this location
+neNeffAndNEWilliamson.simulatedHourlyCookies = function () {
+  var hoursOpen = 14;
+  for(var i = 0; i < hoursOpen; i ++){
+    this.hourlyCookiesArray.push(this.randomHourlyCustomers() * this.avgCookiesPerCustomer);
+  }
 };
