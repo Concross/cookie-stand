@@ -1,5 +1,4 @@
 'use strict';
-
 // First, create a separate JS object literal (no constructor functions... yet) for each shop location that does the following:
 
 // Stores the min/max hourly customers, and the average cookies per customer, in object properties
@@ -12,37 +11,62 @@
 
 // Display the values of each array as unordered lists in the browser
 
-var CollegeAndPence = {
+// College and Pence location object literal
+var collegeAndPence = {
   storeName: 'College and Pence',
   minHourlyCustomers: 23,
   maxHourlyCustomers: 65,
   avgCookiesPerCustomer: 6.3,
 };
+// College and Pence randomHourlyCustomers method
+collegeAndPence.randomHourlyCustomers = function (){
+  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
 
-var ChandlerAnd14th = {
+// Chandler and 14th location object literal
+var chandlerAnd14th = {
   storeName: 'Chandler and 14th',
   minHourlyCustomers: 3,
   maxHourlyCustomers: 24,
   avgCookiesPerCustomer: 1.2,
 };
+// Chandler and 14th randomHourlyCustomers method
+chandlerAnd14th.randomHourlyCustomers = function (){
+  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
 
-var FresnoAnd14th = {
+// Fresno and 14th object literal
+var fresnoAnd14th = {
   storeName: 'Fresno and 14th',
   minHourlyCustomers: 11,
   maxHourlyCustomers: 38,
   avgCookiesPerCustomer: 3.7,
 };
+// Fresno and 14th randomHourlyCustomers method
+fresnoAnd14th.randomHourlyCustomers = function() {
+  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
 
-var MinnesotaAndBond = {
+// Minnesota and Bond object literal
+var minnesotaAndBond = {
   storeName: 'Minnesota and Bond',
   minHourlyCustomers: 20,
   maxHourlyCustomers: 38,
   avgCookiesPerCustomer: 2.3,
 };
+// Minnesota and Bond randomHourlyCustomers method
+minnesotaAndBond.randomHourlyCustomers = function() {
+  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
 
-var NENeffAndNEWilliamson = {
+// NE Neff and NE Williamson object literal
+var neNeffAndNEWilliamson = {
   storeName: 'NE Neff and NE Williamson',
   minHourlyCustomers: 2,
   maxHourlyCustomers: 16,
   avgCookiesPerCustomer: 4.6,
+};
+// NE Neff and NE Williamson randomHourlyCustomers method
+neNeffAndNEWilliamson.randomHourlyCustomers = function() {
+  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
 };
