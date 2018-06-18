@@ -18,3 +18,31 @@ var CollegeAndPence = {
   maxHourlyCustomers: 65,
   avgCookiesPerCustomer: 6.3,
 };
+
+var ChandlerAnd14th = {
+  storeName: 'Chandler and 14th',
+  minHourlyCustomers: 3,
+  maxHourlyCustomers: 24,
+  avgCookiesPerCustomer: 1.2,
+};
+
+var FresnoAnd14th = {
+  storeName: 'Fresno and 14th',
+  minHourlyCustomers: 11,
+  maxHourlyCustomers: 38,
+  avgCookiesPerCustomer: 3.7,
+};
+
+var MinnesotaAndBond = {
+  storeName: 'Minnesota and Bond',
+  minHourlyCustomers: 20,
+  maxHourlyCustomers: 38,
+  avgCookiesPerCustomer: 2.3,
+};
+
+var NENeffAndNEWilliamson = {
+  storeName: 'NE Neff and NE Williamson',
+  minHourlyCustomers: 2,
+  maxHourlyCustomers: 16,
+  avgCookiesPerCustomer: 4.6,
+};
