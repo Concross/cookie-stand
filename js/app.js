@@ -9,7 +9,6 @@ new SalmonCookieStore('Chandler and 14th', 3, 24, 1.2);
 new SalmonCookieStore('Fresno and 14th', 11, 38, 3.7);
 new SalmonCookieStore('Minnesota and Bond', 20, 38, 2.3);
 new SalmonCookieStore('NE Neff and NE Williamson', 2, 16, 4.6);
-renderSalesTable();
 
 // Salmon Cooke Store Object Constructor
 function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer) {
@@ -86,6 +85,15 @@ var createHoursHeaderRow = function () {
   salmonShopSectionEl.appendChild(trEl);
 };
 
+var createFooterRow = function () {
+
+  var allShopsDailyTotal = 0;
+  for(var store in salmonCookieStoresArray){
+    allShopsDailyTotal += salmonCookieStoresArray[store].hourlyCookiesArray[0];
+    console.log(allShopsDailyTotal);
+  }
+};
+
 // Render header row and all current salmon cookie store data to the sales page
 var renderSalesTable = function () {
   createHoursHeaderRow();
@@ -93,4 +101,6 @@ var renderSalesTable = function () {
   for (var store in salmonCookieStoresArray) {
     salmonCookieStoresArray[store].render();
   }
+  createFooterRow();
 };
+renderSalesTable();
