@@ -54,6 +54,20 @@ footer {
 /******************************
 *      CUSTOM CSS LAYOUTS     *
 *******************************/
+nav > ul {
+  text-align: center;
+  padding: 1em;
+}
+
+nav > ul li{
+  display: inline-block;
+  margin: 0 1em;
+  color: #96654A;
+  font-family: Cormorant, serif;
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
 #header-image-container{
   text-align: center;
   background-color: #ABA78F;
@@ -67,23 +81,17 @@ footer {
   transform: translate(-50%, -50%);
 }
 
+#about-salmon-cookies {
+  margin: auto;
+  text-align: center;
+  width: 66%;
+  max-width: 960px;
+}
+
 #locations-hours-footer {
   margin: 0 3em;
 }
 
 #locations-list-footer > li {
   margin: 5px 0;
-}
-nav > ul {
-  text-align: center;
-  padding: 1em;
-}
-
-nav > ul li{
-  display: inline-block;
-  margin: 0 1em;
-  color: #96654A;
-  font-family: Cormorant, serif;
-  font-size: 1.5em;
-  font-weight: 900;
 }
