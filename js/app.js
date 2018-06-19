@@ -16,6 +16,11 @@ function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, av
   salmonCookieStoresArray.push(this);
 }
 
+SalmonCookieStore.prototype.randomHourlyCustomers = function () {
+  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
+
+
 new SalmonCookieStore('College and Pence', 23, 65, 6.3);
 
 // // College and Pence location object literal
