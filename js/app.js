@@ -10,6 +10,7 @@ var collegeAndPence = {
   maxHourlyCustomers: 65,
   avgCookiesPerCustomer: 6.3,
   hourlyCookiesArray: [],
+  dailyCookiesTotal: 0
 };
 // College and Pence randomHourlyCustomers method
 collegeAndPence.randomHourlyCustomers = function () {
@@ -27,6 +28,9 @@ collegeAndPence.simulatedHourlyCookies = function () {
 collegeAndPence.render = function () {
   collegeAndPence.simulatedHourlyCookies();
 
+  for (var cookies in this.hourlyCookiesArray) {
+    this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
+  }
   var h2El = document.createElement('h2');
   h2El.textContent = this.storeName;
 
@@ -43,6 +47,10 @@ collegeAndPence.render = function () {
     }
     ulEl.appendChild(liEl);
   }
+  liEl = document.createElement('li');
+  liEl.textContent = 'Total: ' + this.dailyCookiesTotal + ' cookies';
+  ulEl.appendChild(liEl);
+
   salmonShopSectionEl.appendChild(h2El);
   salmonShopSectionEl.appendChild(ulEl);
 
@@ -54,7 +62,8 @@ var chandlerAnd14th = {
   minHourlyCustomers: 3,
   maxHourlyCustomers: 24,
   avgCookiesPerCustomer: 1.2,
-  hourlyCookiesArray: []
+  hourlyCookiesArray: [],
+  dailyCookiesTotal: 0
 };
 // Chandler and 14th randomHourlyCustomers method
 chandlerAnd14th.randomHourlyCustomers = function () {
@@ -72,6 +81,9 @@ chandlerAnd14th.simulatedHourlyCookies = function () {
 chandlerAnd14th.render = function () {
   chandlerAnd14th.simulatedHourlyCookies();
 
+  for (var cookies in this.hourlyCookiesArray) {
+    this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
+  }
   var h2El = document.createElement('h2');
   h2El.textContent = this.storeName;
 
@@ -87,7 +99,11 @@ chandlerAnd14th.render = function () {
       liEl.textContent = (parseInt(i) - 6) + 'pm: ' + this.hourlyCookiesArray[i] + ' cookies';
     }
     ulEl.appendChild(liEl);
-  }
+  };
+  liEl = document.createElement('li');
+  liEl.textContent = 'Total: ' + this.dailyCookiesTotal + ' cookies';
+  ulEl.appendChild(liEl);
+
   salmonShopSectionEl.appendChild(h2El);
   salmonShopSectionEl.appendChild(ulEl);
 
@@ -99,7 +115,8 @@ var fresnoAnd14th = {
   minHourlyCustomers: 11,
   maxHourlyCustomers: 38,
   avgCookiesPerCustomer: 3.7,
-  hourlyCookiesArray: []
+  hourlyCookiesArray: [],
+  dailyCookiesTotal: 0
 };
 // Fresno and 14th randomHourlyCustomers method
 fresnoAnd14th.randomHourlyCustomers = function () {
@@ -117,6 +134,9 @@ fresnoAnd14th.simulatedHourlyCookies = function () {
 fresnoAnd14th.render = function () {
   fresnoAnd14th.simulatedHourlyCookies();
 
+  for (var cookies in this.hourlyCookiesArray) {
+    this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
+  }
   var h2El = document.createElement('h2');
   h2El.textContent = this.storeName;
 
@@ -133,6 +153,10 @@ fresnoAnd14th.render = function () {
     }
     ulEl.appendChild(liEl);
   }
+  liEl = document.createElement('li');
+  liEl.textContent = 'Total: ' + this.dailyCookiesTotal + ' cookies';
+  ulEl.appendChild(liEl);
+
   salmonShopSectionEl.appendChild(h2El);
   salmonShopSectionEl.appendChild(ulEl);
 
@@ -144,7 +168,8 @@ var minnesotaAndBond = {
   minHourlyCustomers: 20,
   maxHourlyCustomers: 38,
   avgCookiesPerCustomer: 2.3,
-  hourlyCookiesArray: []
+  hourlyCookiesArray: [],
+  dailyCookiesTotal: 0
 };
 // Minnesota and Bond randomHourlyCustomers method
 minnesotaAndBond.randomHourlyCustomers = function () {
@@ -162,6 +187,9 @@ minnesotaAndBond.simulatedHourlyCookies = function () {
 minnesotaAndBond.render = function () {
   minnesotaAndBond.simulatedHourlyCookies();
 
+  for(var cookies in this.hourlyCookiesArray){
+    this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
+  }
   var h2El = document.createElement('h2');
   h2El.textContent = this.storeName;
 
@@ -178,6 +206,10 @@ minnesotaAndBond.render = function () {
     }
     ulEl.appendChild(liEl);
   }
+  liEl = document.createElement('li');
+  liEl.textContent = 'Total: ' + this.dailyCookiesTotal + ' cookies';
+  ulEl.appendChild(liEl);
+
   salmonShopSectionEl.appendChild(h2El);
   salmonShopSectionEl.appendChild(ulEl);
 
@@ -189,7 +221,8 @@ var neffAndWilliamson = {
   minHourlyCustomers: 2,
   maxHourlyCustomers: 16,
   avgCookiesPerCustomer: 4.6,
-  hourlyCookiesArray: []
+  hourlyCookiesArray: [],
+  dailyCookiesTotal: 0
 };
 // NE Neff and NE Williamson randomHourlyCustomers method
 neffAndWilliamson.randomHourlyCustomers = function () {
@@ -207,6 +240,9 @@ neffAndWilliamson.simulatedHourlyCookies = function () {
 neffAndWilliamson.render = function () {
   neffAndWilliamson.simulatedHourlyCookies();
 
+  for(var cookies in this.hourlyCookiesArray){
+    this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
+  }
   var h2El = document.createElement('h2');
   h2El.textContent = this.storeName;
 
@@ -223,6 +259,9 @@ neffAndWilliamson.render = function () {
     }
     ulEl.appendChild(liEl);
   }
+  liEl = document.createElement('li');
+  liEl.textContent = 'Total: ' + this.dailyCookiesTotal + ' cookies';
+  ulEl.appendChild(liEl);
   salmonShopSectionEl.appendChild(h2El);
   salmonShopSectionEl.appendChild(ulEl);
 
