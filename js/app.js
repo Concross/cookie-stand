@@ -37,7 +37,7 @@ collegeAndPence.render = function () {
   h2El.textContent = this.storeName;
 
   var ulEl = document.createElement('ul');
-  
+
   // Create list items for each hour and render it
   for (var i in this.hourlyCookiesArray) {
     var liEl = document.createElement('li');
