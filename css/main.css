@@ -82,7 +82,7 @@ nav > ul li{
 }
 
 #about-salmon-cookies {
-  margin: auto;
+  margin: 25px auto;
   text-align: center;
   width: 66%;
   max-width: 960px;
@@ -100,6 +100,7 @@ nav > ul li{
 
 #locations-hours-footer {
   margin: 0 3em;
+  float: left;
 }
 
 #locations-list-footer > li {
