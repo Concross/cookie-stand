@@ -20,14 +20,16 @@ collegeAndPence.randomHourlyCustomers = function () {
 //Simulates the number of cookies sold per hour for this location
 collegeAndPence.simulatedHourlyCookies = function () {
   var hoursOpen = 15;
+  // Add a random number of customers times avg cookies per hour for each hour open
   for (var i = 0; i < hoursOpen; i++) {
-    this.hourlyCookiesArray.push(Math.floor(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
+    this.hourlyCookiesArray.push(Math.ceil(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
   }
 };
 // College and Pence render section
 collegeAndPence.render = function () {
-  collegeAndPence.simulatedHourlyCookies();
+  this.simulatedHourlyCookies();
 
+  // Calculate daily total cookies for this shop
   for (var cookies in this.hourlyCookiesArray) {
     this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
   }
@@ -35,14 +37,15 @@ collegeAndPence.render = function () {
   h2El.textContent = this.storeName;
 
   var ulEl = document.createElement('ul');
-
+  
+  // Create list items for each hour and render it
   for (var i in this.hourlyCookiesArray) {
     var liEl = document.createElement('li');
-    if ((parseInt(i) + 6) < 12) {
+    if ((parseInt(i) + 6) < 12) { // Check if it's before 12pm
       liEl.textContent = (parseInt(i) + 6) + 'am: ' + this.hourlyCookiesArray[i] + ' cookies';
-    } else if (parseInt(i) === 6) {
+    } else if (parseInt(i) === 6) { // If it is 12pm
       liEl.textContent = (parseInt(i) + 6) + 'pm: ' + this.hourlyCookiesArray[i] + ' cookies';
-    } else {
+    } else { // If its after 12 pm
       liEl.textContent = (parseInt(i) - 6) + 'pm: ' + this.hourlyCookiesArray[i] + ' cookies';
     }
     ulEl.appendChild(liEl);
@@ -74,12 +77,12 @@ chandlerAnd14th.randomHourlyCustomers = function () {
 chandlerAnd14th.simulatedHourlyCookies = function () {
   var hoursOpen = 15;
   for (var i = 0; i < hoursOpen; i++) {
-    this.hourlyCookiesArray.push(Math.floor(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
+    this.hourlyCookiesArray.push(Math.ceil(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
   }
 };
 // Chandler and 14th render section
 chandlerAnd14th.render = function () {
-  chandlerAnd14th.simulatedHourlyCookies();
+  this.simulatedHourlyCookies();
 
   for (var cookies in this.hourlyCookiesArray) {
     this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
@@ -127,12 +130,12 @@ fresnoAnd14th.randomHourlyCustomers = function () {
 fresnoAnd14th.simulatedHourlyCookies = function () {
   var hoursOpen = 15;
   for (var i = 0; i < hoursOpen; i++) {
-    this.hourlyCookiesArray.push(Math.floor(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
+    this.hourlyCookiesArray.push(Math.ceil(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
   }
 };
 // Fresno and 14th render section
 fresnoAnd14th.render = function () {
-  fresnoAnd14th.simulatedHourlyCookies();
+  this.simulatedHourlyCookies();
 
   for (var cookies in this.hourlyCookiesArray) {
     this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
@@ -180,12 +183,12 @@ minnesotaAndBond.randomHourlyCustomers = function () {
 minnesotaAndBond.simulatedHourlyCookies = function () {
   var hoursOpen = 15;
   for (var i = 0; i < hoursOpen; i++) {
-    this.hourlyCookiesArray.push(Math.floor(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
+    this.hourlyCookiesArray.push(Math.ceil(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
   }
 };
 // Minnesota and Bond render section
 minnesotaAndBond.render = function () {
-  minnesotaAndBond.simulatedHourlyCookies();
+  this.simulatedHourlyCookies();
 
   for(var cookies in this.hourlyCookiesArray){
     this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
@@ -233,12 +236,12 @@ neffAndWilliamson.randomHourlyCustomers = function () {
 neffAndWilliamson.simulatedHourlyCookies = function () {
   var hoursOpen = 15;
   for (var i = 0; i < hoursOpen; i++) {
-    this.hourlyCookiesArray.push(Math.floor(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
+    this.hourlyCookiesArray.push(Math.ceil(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
   }
 };
 // NE Neff and NE Williamson render section
 neffAndWilliamson.render = function () {
-  neffAndWilliamson.simulatedHourlyCookies();
+  this.simulatedHourlyCookies();
 
   for(var cookies in this.hourlyCookiesArray){
     this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
