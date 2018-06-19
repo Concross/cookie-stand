@@ -27,6 +27,10 @@ p {
   font-family: Lora, serif;
 }
 
+td {
+  padding: 5px;
+}
+
 em {
   color: #96654A;
 }
