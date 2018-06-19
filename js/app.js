@@ -39,15 +39,32 @@ SalmonCookieStore.prototype.calcDailyCookiesTotal = function () {
 };
 
 // Method that renders an object's hourly cookie sales into a table
+SalmonCookieStore.prototype.render = function () {
+  // Call necessary functions for render
+  this.simulatedHourlyCookies();
+  this.calcDailyCookiesTotal();
+  // Create table row and start the row with a store name header
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = this.storeName;
+  trEl.appendChild(thEl);
 
+  for (var hour in this.hoursOpenArray){
+    var tdEl = document.createElement('td');
+    tdEl.textContent = this.hourlyCookiesArray[hour];
+    trEl.appendChild(tdEl);
+  }
+  tdEl = document.createElement('td');
+  tdEl.textContent = this.dailyCookiesTotal;
+  trEl.appendChild(tdEl);
+  salmonShopSectionEl.appendChild(trEl);
+};
 
 new SalmonCookieStore('College and Pence', 23, 65, 6.3, 15);
 
-salmonCookieStoresArray[0].simulatedHourlyCookies();
-salmonCookieStoresArray[0].calcDailyCookiesTotal();
-console.log(salmonCookieStoresArray[0].hourlyCookiesArray);
-console.log(salmonCookieStoresArray[0].dailyCookiesTotal);
-
+// salmonCookieStoresArray[0].simulatedHourlyCookies();
+// salmonCookieStoresArray[0].calcDailyCookiesTotal();
+salmonCookieStoresArray[0].render();
 
 // // College and Pence location object literal
 // var collegeAndPence = {
