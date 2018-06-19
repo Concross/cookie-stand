@@ -88,6 +88,16 @@ nav > ul li{
   max-width: 960px;
 }
 
+#health-benefits-list {
+  margin: 20px auto;
+  padding: 5px;
+  max-width: 860px;
+  width: 56%;
+  text-align: center;
+  background-color: #C28C5E;
+  border-radius: 5px;
+}
+
 #locations-hours-footer {
   margin: 0 3em;
 }
