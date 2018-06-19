@@ -9,7 +9,6 @@ new SalmonCookieStore('Chandler and 14th', 3, 24, 1.2);
 new SalmonCookieStore('Fresno and 14th', 11, 38, 3.7);
 new SalmonCookieStore('Minnesota and Bond', 20, 38, 2.3);
 new SalmonCookieStore('NE Neff and NE Williamson', 2, 16, 4.6);
-renderSalesTable();
 
 // Salmon Cooke Store Object Constructor
 function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer) {
@@ -69,6 +68,13 @@ SalmonCookieStore.prototype.render = function () {
   salmonShopSectionEl.appendChild(trEl);
 };
 
+var calcAllShopsDailyTotal = function () {
+  var allShopsDailyTotal = 0;
+  for (var store in salmonCookieStoresArray){
+    allShopsDailyTotal += salmonCookieStoresArray[store].dailyCookiesTotal;
+  }
+  return allShopsDailyTotal;
+};
 // Global function to create a header row of hours for table data
 var createHoursHeaderRow = function () {
   var trEl = document.createElement('tr');
@@ -86,6 +92,32 @@ var createHoursHeaderRow = function () {
   salmonShopSectionEl.appendChild(trEl);
 };
 
+// Global function to create a footer row of hourly totals
+var createFooterRow = function () {
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Hourly Totals';
+  trEl.appendChild(thEl);
+
+  for(var i = 0; i < SalmonCookieStore.hoursOpenArray.length; i++){
+    var allShopsHourlyTotal = 0;
+    var tdEl = document.createElement('td');
+    for (var store in salmonCookieStoresArray) {
+      allShopsHourlyTotal += salmonCookieStoresArray[store].hourlyCookiesArray[i];
+      console.log(allShopsHourlyTotal);
+    }
+    tdEl.textContent = allShopsHourlyTotal;
+    trEl.appendChild(tdEl);
+  }
+
+  // Render the daily total across all shops
+  thEl = document.createElement('th');
+  thEl.textContent = calcAllShopsDailyTotal();
+  trEl.appendChild(thEl);
+
+  salmonShopSectionEl.appendChild(trEl);
+};
+
 // Render header row and all current salmon cookie store data to the sales page
 var renderSalesTable = function () {
   createHoursHeaderRow();
@@ -93,4 +125,6 @@ var renderSalesTable = function () {
   for (var store in salmonCookieStoresArray) {
     salmonCookieStoresArray[store].render();
   }
+  createFooterRow();
 };
+renderSalesTable();
