@@ -20,6 +20,7 @@ SalmonCookieStore.prototype.randomHourlyCustomers = function () {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
 };
 
+// SalmonCookieStore.prototype.simulatedHourlyCookies
 
 new SalmonCookieStore('College and Pence', 23, 65, 6.3);
 
