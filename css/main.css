@@ -1,6 +1,10 @@
 /*****************************
 *      BASE CSS STYLING      *
 ******************************/
+body {
+  background-color: #CDBAAF;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant', serif;
 }
@@ -17,7 +21,7 @@ h3 {
 }
 
 p {
-  font-family: 'Lora:400i', serif;
+  font-family: Lora, serif;
 }
 
 header {
@@ -26,7 +30,7 @@ header {
 
 nav {
   height: 50px;
-  background-color: #96654A;
+  background-color: #333024;
 }
 /******************************
 *      CUSTOM CSS LAYOUTS     *
@@ -51,7 +55,7 @@ nav > ul {
 nav > ul li{
   display: inline-block;
   margin: 0 1em;
-  color: #333024;
+  color: #96654A;
   font-family: Cormorant, serif;
   font-size: 1.5em;
   font-weight: 900;
