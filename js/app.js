@@ -3,26 +3,50 @@
 var salmonCookieStoresArray = [];
 var salmonShopSectionEl = document.getElementById('salmon-shops');
 
-
-function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer){
+// Salmon Cooke Store Object Constructor
+function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer, hoursOpen){
 
   this.storeName = storeName;
   this.minHourlyCustomers = minHourlyCustomers;
   this.maxHourlyCustomers = maxHourlyCustomers;
   this.avgCookiesPerCustomer = avgCookiesPerCustomer;
+  this.hoursOpen = hoursOpen;
   this.hourlyCookiesArray = [];
   this.dailyCookiesTotal = 0;
 
+  // Add this object instance to the stores Array
   salmonCookieStoresArray.push(this);
 }
 
+// Method that returns a random number of customers within an objects min/max
 SalmonCookieStore.prototype.randomHourlyCustomers = function () {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
 };
 
-// SalmonCookieStore.prototype.simulatedHourlyCookies
+// Method that stores an hourly amount of cookies in an objects hourlyCookiesArray
+SalmonCookieStore.prototype.simulatedHourlyCookies = function () {
+  for (var i = 0; i < this.hoursOpen; i++){
+    this.hourlyCookiesArray.push(Math.ceil(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
+  }
+};
 
-new SalmonCookieStore('College and Pence', 23, 65, 6.3);
+// Method that keeps a daily total based on simulatedHourlyCookies
+SalmonCookieStore.prototype.calcDailyCookiesTotal = function () {
+  for (var cookies in this.hourlyCookiesArray){
+    this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
+  }
+  return this.dailyCookiesTotal;
+};
+
+// Method that renders an object's hourly cookie sales into a table
+
+new SalmonCookieStore('College and Pence', 23, 65, 6.3, 15);
+
+salmonCookieStoresArray[0].simulatedHourlyCookies();
+salmonCookieStoresArray[0].calcDailyCookiesTotal();
+console.log(salmonCookieStoresArray[0].hourlyCookiesArray);
+console.log(salmonCookieStoresArray[0].dailyCookiesTotal);
+
 
 // // College and Pence location object literal
 // var collegeAndPence = {
