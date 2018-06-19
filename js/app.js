@@ -68,6 +68,13 @@ SalmonCookieStore.prototype.render = function () {
   salmonShopSectionEl.appendChild(trEl);
 };
 
+var calcAllShopsDailyTotal = function () {
+  var allShopsDailyTotal = 0;
+  for (var store in salmonCookieStoresArray){
+    allShopsDailyTotal += salmonCookieStoresArray[store].dailyCookiesTotal;
+  }
+  return allShopsDailyTotal;
+};
 // Global function to create a header row of hours for table data
 var createHoursHeaderRow = function () {
   var trEl = document.createElement('tr');
@@ -85,13 +92,30 @@ var createHoursHeaderRow = function () {
   salmonShopSectionEl.appendChild(trEl);
 };
 
+// Global function to create a footer row of hourly totals
 var createFooterRow = function () {
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Hourly Totals';
+  trEl.appendChild(thEl);
 
-  var allShopsDailyTotal = 0;
-  for(var store in salmonCookieStoresArray){
-    allShopsDailyTotal += salmonCookieStoresArray[store].hourlyCookiesArray[0];
-    console.log(allShopsDailyTotal);
+  for(var i = 0; i < SalmonCookieStore.hoursOpenArray.length; i++){
+    var allShopsHourlyTotal = 0;
+    var tdEl = document.createElement('td');
+    for (var store in salmonCookieStoresArray) {
+      allShopsHourlyTotal += salmonCookieStoresArray[store].hourlyCookiesArray[i];
+      console.log(allShopsHourlyTotal);
+    }
+    tdEl.textContent = allShopsHourlyTotal;
+    trEl.appendChild(tdEl);
   }
+
+  // Render the daily total across all shops
+  thEl = document.createElement('th');
+  thEl.textContent = calcAllShopsDailyTotal();
+  trEl.appendChild(thEl);
+
+  salmonShopSectionEl.appendChild(trEl);
 };
 
 // Render header row and all current salmon cookie store data to the sales page
