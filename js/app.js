@@ -4,15 +4,15 @@ var salmonCookieStoresArray = [];
 var salmonShopSectionEl = document.getElementById('salmon-shops');
 
 // Salmon Cooke Store Object Constructor
-function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer, hoursOpen){
+function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer) {
 
   this.storeName = storeName;
   this.minHourlyCustomers = minHourlyCustomers;
   this.maxHourlyCustomers = maxHourlyCustomers;
   this.avgCookiesPerCustomer = avgCookiesPerCustomer;
-  this.hoursOpen = hoursOpen;
   this.hourlyCookiesArray = [];
   this.dailyCookiesTotal = 0;
+  this.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
   // Add this object instance to the stores Array
   salmonCookieStoresArray.push(this);
@@ -25,20 +25,21 @@ SalmonCookieStore.prototype.randomHourlyCustomers = function () {
 
 // Method that stores an hourly amount of cookies in an objects hourlyCookiesArray
 SalmonCookieStore.prototype.simulatedHourlyCookies = function () {
-  for (var i = 0; i < this.hoursOpen; i++){
+  for (var i = 0; i < this.hoursOpenArray.length; i++) {
     this.hourlyCookiesArray.push(Math.ceil(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
   }
 };
 
 // Method that keeps a daily total based on simulatedHourlyCookies
 SalmonCookieStore.prototype.calcDailyCookiesTotal = function () {
-  for (var cookies in this.hourlyCookiesArray){
+  for (var cookies in this.hourlyCookiesArray) {
     this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
   }
   return this.dailyCookiesTotal;
 };
 
 // Method that renders an object's hourly cookie sales into a table
+
 
 new SalmonCookieStore('College and Pence', 23, 65, 6.3, 15);
 
