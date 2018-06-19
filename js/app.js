@@ -236,6 +236,6 @@ salmonCookieShops.push(minnesotaAndBond);
 salmonCookieShops.push(neffAndWilliamson);
 
 // Render each location on the page in an unordered list
-for(var shop in salmonCookieShops){
+for (var shop in salmonCookieShops) {
   salmonCookieShops[shop].render();
 }
