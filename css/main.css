@@ -1,0 +1,53 @@
+/*****************************
+*      BASE CSS STYLING      *
+******************************/
+h1, h2, h3, h4, h5, h6 {
+  font-family: Cormorant, serif;
+}
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+header {
+  position: relative;
+}
+
+nav {
+  height: 50px;
+  background-color: #96654A;
+}
+/******************************
+*      CUSTOM CSS LAYOUTS     *
+*******************************/
+#header-image-container{
+  text-align: center;
+  background-color: #ABA78F;
+}
+
+#header-h1 {
+  position: absolute;
+  font-size: 4em;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+nav > ul {
+  text-align: center;
+  padding: 1em;
+}
+
+nav > ul li{
+  display: inline-block;
+  margin: 0 1em;
+  color: #333024;
+  font-family: Cormorant, serif;
+  font-size: 1.5em;
+}
