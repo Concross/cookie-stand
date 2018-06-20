@@ -33,6 +33,7 @@ SalmonCookieStore.prototype.randomHourlyCustomers = function () {
 
 // Method that stores an hourly amount of cookies in an objects hourlyCookiesArray
 SalmonCookieStore.prototype.simulatedHourlyCookies = function () {
+  this.hourlyCookiesArray = [];
   for (var i = 0; i < this.hoursOpenArray.length; i++) {
     this.hourlyCookiesArray.push(Math.ceil(this.randomHourlyCustomers() * this.avgCookiesPerCustomer));
   }
@@ -54,7 +55,8 @@ SalmonCookieStore.prototype.render = function () {
   // Create table row and start the row with a store name header
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
-  thEl.textContent = this.storeName;tr.appendChild(thEl);
+  thEl.textContent = this.storeName;
+  trEl.appendChild(thEl);
   // Render table cell data for each store
   for (var hour in this.hoursOpenArray) {
     var tdEl = document.createElement('td');
@@ -104,7 +106,6 @@ var createFooterRow = function () {
     var tdEl = document.createElement('td');
     for (var store in salmonCookieStoresArray) {
       allShopsHourlyTotal += salmonCookieStoresArray[store].hourlyCookiesArray[i];
-      console.log(allShopsHourlyTotal);
     }
     tdEl.textContent = allShopsHourlyTotal;
     trEl.appendChild(tdEl);
