@@ -54,8 +54,7 @@ SalmonCookieStore.prototype.render = function () {
   // Create table row and start the row with a store name header
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
-  thEl.textContent = this.storeName;
-  trEl.appendChild(thEl);
+  thEl.textContent = this.storeName;tr.appendChild(thEl);
   // Render table cell data for each store
   for (var hour in this.hoursOpenArray) {
     var tdEl = document.createElement('td');
