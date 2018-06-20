@@ -18,16 +18,8 @@ function handleAddNewShop(event) {
   var newShopMaxCustomers = event.target.maxCustomers.value;
   var newAvgCookiesPerCustomer = event.target.avgCookiesPerCustomer.value;
 
-  console.log(newShopLocation);
-  console.log(newShopMinCustomers);
-  console.log(typeof(newShopMaxCustomers));
-  console.log(typeof(newAvgCookiesPerCustomer));
   // Create new SalmonCookieStore object for new shop
   new SalmonCookieStore(newShopLocation, newShopMinCustomers, newShopMaxCustomers, newAvgCookiesPerCustomer);
-  // console.log(salmonCookieStoresArray[0].minHourlyCustomers);
-  // console.log(salmonCookieStoresArray[0].maxHourlyCustomers);
-  // console.log(salmonCookieStoresArray[0].avgCookiesPerCustomer);
-  // console.log(salmonCookieStoresArray[0].randomHourlyCustomers());
   // Clear old table, render new
   salmonShopSectionEl.innerHTML = '';
   renderSalesTable();
