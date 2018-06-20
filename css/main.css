@@ -63,7 +63,7 @@ header {
 }
 
 nav {
-  height: 50px;
+  height: 35px;
   background-color: #333024;
 }
 
@@ -83,7 +83,7 @@ footer {
 *******************************/
 nav > ul {
   text-align: center;
-  padding: 1em;
+  padding: 0.4em;
 }
 
 nav > ul li{
@@ -119,7 +119,7 @@ nav > ul li{
   margin: 20px auto;
   padding: 5px;
   max-width: 860px;
-  width: 56%;
+  width: 33%;
   text-align: center;
   background-color: #C28C5E;
   border-radius: 5px;
