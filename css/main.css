@@ -95,10 +95,13 @@ td:last-child, th:last-child {
 }
 
 /* End Custom Table Layout */
+nav a {
+  text-decoration: none;
+}
 
 nav > ul {
   text-align: center;
-  padding: 0.4em;
+  padding: 0.4em 0;
 }
 
 nav > ul li{
