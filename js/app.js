@@ -18,7 +18,13 @@ function handleAddNewShop(event) {
   console.log(event.target.avgCookiesPerCustomer.value);
   // Grab values from input fields
   var newShopLocation = event.target.location.value;
-  // var newShopMinCustomers = event.target.min-customers.value;
+  var newShopMinCustomers = event.target.minCustomers.value;
+  var newShopMaxCustomers = event.target.maxCustomers.value;
+  var newAvgCookiesPerCustomer = event.target.avgCookiesPerCustomer.value;
+
+  new SalmonCookieStore(newShopLocation, newShopMinCustomers, newShopMaxCustomers, newAvgCookiesPerCustomer);
+
+  salmonCookieStoresArray[salmonCookieStoresArray.length - 1].render();
 }
 
 /***********************************
