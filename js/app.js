@@ -105,6 +105,9 @@ SalmonCookieStore.prototype.render = function () {
   salmonShopSectionEl.appendChild(trEl);
 };
 
+/***********************************
+*          HELPER FUNCTIONS        *
+************************************/
 var calcAllShopsDailyTotal = function () {
   var allShopsDailyTotal = 0;
   for (var store in salmonCookieStoresArray){
@@ -164,4 +167,5 @@ var renderSalesTable = function () {
   }
   createFooterRow();
 };
+
 renderSalesTable();
