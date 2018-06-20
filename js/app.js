@@ -12,21 +12,26 @@ var newShopForm = document.getElementById('new-shop-form');
 
 function handleAddNewShop(event) {
   event.preventDefault();
-  console.log(event.target.location.value);
-  console.log(event.target.minCustomers.value);
-  console.log(event.target.maxCustomers.value);
-  console.log(event.target.avgCookiesPerCustomer.value);
   // Grab values from input fields
   var newShopLocation = event.target.location.value;
   var newShopMinCustomers = event.target.minCustomers.value;
   var newShopMaxCustomers = event.target.maxCustomers.value;
   var newAvgCookiesPerCustomer = event.target.avgCookiesPerCustomer.value;
 
+  console.log(newShopLocation);
+  console.log(newShopMinCustomers);
+  console.log(typeof(newShopMaxCustomers));
+  console.log(typeof(newAvgCookiesPerCustomer));
+  // Create new SalmonCookieStore object for new shop
   new SalmonCookieStore(newShopLocation, newShopMinCustomers, newShopMaxCustomers, newAvgCookiesPerCustomer);
-
+  // console.log(salmonCookieStoresArray[0].minHourlyCustomers);
+  // console.log(salmonCookieStoresArray[0].maxHourlyCustomers);
+  // console.log(salmonCookieStoresArray[0].avgCookiesPerCustomer);
+  // console.log(salmonCookieStoresArray[0].randomHourlyCustomers());
+  // Clear old table, render new
   salmonShopSectionEl.innerHTML = '';
   renderSalesTable();
-}
+};
 
 /***********************************
 *         EVENT LISTENERS          *
@@ -51,9 +56,9 @@ new SalmonCookieStore('NE Neff and NE Williamson', 2, 16, 4.6);
 // Salmon Cooke Store Object Constructor
 function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer) {
   this.storeName = storeName;
-  this.minHourlyCustomers = minHourlyCustomers;
-  this.maxHourlyCustomers = maxHourlyCustomers;
-  this.avgCookiesPerCustomer = avgCookiesPerCustomer;
+  this.minHourlyCustomers = parseInt(minHourlyCustomers);
+  this.maxHourlyCustomers = parseInt(maxHourlyCustomers);
+  this.avgCookiesPerCustomer = parseFloat(avgCookiesPerCustomer);
   this.hourlyCookiesArray = [];
   this.dailyCookiesTotal = 0;
   this.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
@@ -66,7 +71,7 @@ SalmonCookieStore.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', 
 
 // Method that returns a random number of customers within an objects min/max
 SalmonCookieStore.prototype.randomHourlyCustomers = function () {
-  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+  return Math.ceil(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
 };
 
 // Method that stores an hourly amount of cookies in an objects hourlyCookiesArray
