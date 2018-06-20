@@ -24,7 +24,8 @@ function handleAddNewShop(event) {
 
   new SalmonCookieStore(newShopLocation, newShopMinCustomers, newShopMaxCustomers, newAvgCookiesPerCustomer);
 
-  salmonCookieStoresArray[salmonCookieStoresArray.length - 1].render();
+  salmonShopSectionEl.innerHTML = '';
+  renderSalesTable();
 }
 
 /***********************************
@@ -58,7 +59,7 @@ function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, av
   this.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
   // Add this object instance to the stores Array
-  salmonCookieStoresArray.push(this);
+  salmonCookieStoresArray.unshift(this);
 }
 // Open Hours array for a universal reference
 SalmonCookieStore.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
@@ -78,6 +79,7 @@ SalmonCookieStore.prototype.simulatedHourlyCookies = function () {
 
 // Method that keeps a daily total based on simulatedHourlyCookies
 SalmonCookieStore.prototype.calcDailyCookiesTotal = function () {
+  this.dailyCookiesTotal = 0;
   for (var cookies in this.hourlyCookiesArray) {
     this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
   }
