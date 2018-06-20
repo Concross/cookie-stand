@@ -38,6 +38,27 @@
 
   <h1>Salmon Cookie Shops</h1>
 
+  <form id="new-shop-form">
+    <fieldset>
+      <legend>Add a new shop!</legend>
+
+      <label for="location">Location</label>
+      <input name="location" type="text" size="30" required=true />
+
+      <label for="minCustomers">Minimum Customers</label>
+      <input name="minCustomers" type="number" size="5" required=true />
+
+      <label for="maxCustomers">Maximum Customers</label>
+      <input name="maxCustomers" type="number" size="5" required=true />
+
+      <label for="avgCookiesPerCustomer">Average cookies per customer</label>
+      <input name="avgCookiesPerCustomer" type="number" step="any" size="5" required=true />
+
+      <button type="submit">Add Shop</button>
+
+    </fieldset>
+  </form>
+
   <section>
     <table id="salmon-shops">
 

@@ -1,7 +1,50 @@
 'use strict';
+
+/***********************************
+ * Global Variables for DOM Access *
+ ***********************************/
+var salmonShopSectionEl = document.getElementById('salmon-shops');
+var newShopForm = document.getElementById('new-shop-form');
+
+/***********************************
+*         EVENT HANDLERS           *
+************************************/
+
+function handleAddNewShop(event) {
+  event.preventDefault();
+  // Grab values from input fields
+  var newShopLocation = event.target.location.value;
+  var newShopMinCustomers = event.target.minCustomers.value;
+  var newShopMaxCustomers = event.target.maxCustomers.value;
+  var newAvgCookiesPerCustomer = event.target.avgCookiesPerCustomer.value;
+
+  console.log(newShopLocation);
+  console.log(newShopMinCustomers);
+  console.log(typeof(newShopMaxCustomers));
+  console.log(typeof(newAvgCookiesPerCustomer));
+  // Create new SalmonCookieStore object for new shop
+  new SalmonCookieStore(newShopLocation, newShopMinCustomers, newShopMaxCustomers, newAvgCookiesPerCustomer);
+  // console.log(salmonCookieStoresArray[0].minHourlyCustomers);
+  // console.log(salmonCookieStoresArray[0].maxHourlyCustomers);
+  // console.log(salmonCookieStoresArray[0].avgCookiesPerCustomer);
+  // console.log(salmonCookieStoresArray[0].randomHourlyCustomers());
+  // Clear old table, render new
+  salmonShopSectionEl.innerHTML = '';
+  renderSalesTable();
+};
+
+/***********************************
+*         EVENT LISTENERS          *
+************************************/
+
+newShopForm.addEventListener('submit', handleAddNewShop);
+
+/***********************************
+ *   Salmon Cookie Object Segment  *
+ ***********************************/
+
 // Array for all salmon store objects
 var salmonCookieStoresArray = [];
-var salmonShopSectionEl = document.getElementById('salmon-shops');
 
 // Instantiate new SalmonCookieStore objects
 new SalmonCookieStore('College and Pence', 23, 65, 6.3);
@@ -13,22 +56,22 @@ new SalmonCookieStore('NE Neff and NE Williamson', 2, 16, 4.6);
 // Salmon Cooke Store Object Constructor
 function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer) {
   this.storeName = storeName;
-  this.minHourlyCustomers = minHourlyCustomers;
-  this.maxHourlyCustomers = maxHourlyCustomers;
-  this.avgCookiesPerCustomer = avgCookiesPerCustomer;
+  this.minHourlyCustomers = parseInt(minHourlyCustomers);
+  this.maxHourlyCustomers = parseInt(maxHourlyCustomers);
+  this.avgCookiesPerCustomer = parseFloat(avgCookiesPerCustomer);
   this.hourlyCookiesArray = [];
   this.dailyCookiesTotal = 0;
   this.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
   // Add this object instance to the stores Array
-  salmonCookieStoresArray.push(this);
+  salmonCookieStoresArray.unshift(this);
 }
 // Open Hours array for a universal reference
 SalmonCookieStore.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 // Method that returns a random number of customers within an objects min/max
 SalmonCookieStore.prototype.randomHourlyCustomers = function () {
-  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+  return Math.ceil(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
 };
 
 // Method that stores an hourly amount of cookies in an objects hourlyCookiesArray
@@ -41,6 +84,7 @@ SalmonCookieStore.prototype.simulatedHourlyCookies = function () {
 
 // Method that keeps a daily total based on simulatedHourlyCookies
 SalmonCookieStore.prototype.calcDailyCookiesTotal = function () {
+  this.dailyCookiesTotal = 0;
   for (var cookies in this.hourlyCookiesArray) {
     this.dailyCookiesTotal += this.hourlyCookiesArray[cookies];
   }

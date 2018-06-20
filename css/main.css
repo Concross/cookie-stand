@@ -95,6 +95,45 @@ td:last-child, th:last-child {
 }
 
 /* End Custom Table Layout */
+
+/*****************************
+*         FORM STYLE         *
+******************************/
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+fieldset {
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 1px solid #333024;
+}
+
+legend {
+  display: block;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: none;
+}
+
+label {
+  cursor: default;
+}
+
+input[type=number] {
+  width: 55px;
+}
+
+/*****************************
+*       END FORM STYLE       *
+******************************/
 nav a {
   text-decoration: none;
 }
