@@ -13,8 +13,12 @@ var newShopForm = document.getElementById('new-shop-form');
 function handleAddNewShop(event) {
   event.preventDefault();
   console.log(event.target.location.value);
+  console.log(event.target.minCustomers.value);
+  console.log(event.target.maxCustomers.value);
+  console.log(event.target.avgCookiesPerCustomer.value);
   // Grab values from input fields
   var newShopLocation = event.target.location.value;
+  // var newShopMinCustomers = event.target.min-customers.value;
 }
 
 /***********************************
