@@ -79,6 +79,7 @@ var calcAllShopsDailyTotal = function () {
 var createHoursHeaderRow = function () {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
+  thEl.textContent = 'Store Locations';
   trEl.appendChild(thEl);
   for (var hour in SalmonCookieStore.hoursOpenArray) {
     thEl = document.createElement('th');
