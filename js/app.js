@@ -1,7 +1,34 @@
 'use strict';
+
+/***********************************
+ * Global Variables for DOM Access *
+ ***********************************/
+var salmonShopSectionEl = document.getElementById('salmon-shops');
+var newShopForm = document.getElementById('new-shop-form');
+
+/***********************************
+*         EVENT HANDLERS           *
+************************************/
+
+function handleAddNewShop(event) {
+  event.preventDefault();
+  console.log(event.target.location.value);
+  // Grab values from input fields
+  var newShopLocation = event.target.location.value;
+}
+
+/***********************************
+*         EVENT LISTENERS          *
+************************************/
+
+newShopForm.addEventListener('submit', handleAddNewShop);
+
+/***********************************
+ *   Salmon Cookie Object Segment  *
+ ***********************************/
+
 // Array for all salmon store objects
 var salmonCookieStoresArray = [];
-var salmonShopSectionEl = document.getElementById('salmon-shops');
 
 // Instantiate new SalmonCookieStore objects
 new SalmonCookieStore('College and Pence', 23, 65, 6.3);
