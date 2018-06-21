@@ -28,13 +28,11 @@ function handleAddNewShop(event) {
 /***********************************
 *         EVENT LISTENERS          *
 ************************************/
-
 newShopForm.addEventListener('submit', handleAddNewShop);
 
 /***********************************
  *   Salmon Cookie Object Segment  *
  ***********************************/
-
 // Array for all salmon store objects
 var salmonCookieStoresArray = [];
 
