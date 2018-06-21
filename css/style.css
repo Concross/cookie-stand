@@ -43,7 +43,43 @@ main {
   margin: auto;
 }
 
-main section:first-child {
-  margin: auto;
-  text-align: center
+main section {
+  margin: 0 auto 30px auto;
+}
+
+main section:first-child, main section:nth-child(2) {
+  text-align: center;
+  width: 75%;
+}
+
+main section article {
+  float: left;
+  width: 50%;
+  margin: 0 30px 30px 0;
+}
+
+main section article h2 {
+  width: 100%;
+  margin: 20px auto 30px auto;
+  font-size: 36px;
+}
+
+main section article ul {
+  font-size: 16px;
+}
+
+main section article ul li {
+  text-align: left;
+  margin-left: 30px;
+}
+
+main section article ul li:before {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 30px;
+    background-size: 30px;
+    background-image: url("../img/salmon.png");
+    background-repeat: no-repeat;
+    margin-right: 10px;
 }
