@@ -114,7 +114,6 @@ function checkIfExistsAndUpdate(event){
 
   for(var i = 0; i < salmonCookieStoresArray.length; i++){
     if(event.target.location.value.toLowerCase() === salmonCookieStoresArray[i].storeName.toLowerCase()){
-      console.log('these match');
       return true;
     }
   }
