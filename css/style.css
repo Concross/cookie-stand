@@ -119,7 +119,7 @@ main section article ul li:before {
     margin-right: 10px;
 }
 
-main section:nth-child(3) h1 {
+main section:nth-child(3) {
   text-align: center;
 }
 
