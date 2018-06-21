@@ -9,7 +9,6 @@ var newShopForm = document.getElementById('new-shop-form');
 /***********************************
 *         EVENT HANDLERS           *
 ************************************/
-
 function handleAddNewShop(event) {
   event.preventDefault();
   // Grab values from input fields
@@ -33,7 +32,6 @@ newShopForm.addEventListener('submit', handleAddNewShop);
 /***********************************
  *   Salmon Cookie Object Segment  *
  ***********************************/
-// Array for all salmon store objects
 var salmonCookieStoresArray = [];
 
 // Instantiate new SalmonCookieStore objects
@@ -53,7 +51,7 @@ function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, av
   this.dailyCookiesTotal = 0;
   this.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-  // Add this object instance to the stores Array
+  // Add this object instance to the front of the stores Array
   salmonCookieStoresArray.unshift(this);
 }
 // Open Hours array for a universal reference
