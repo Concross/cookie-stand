@@ -1,3 +1,7 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant', serif;
+}
+
 h1 {
   margin-bottom: 10px;
   font-size: 48px;
@@ -12,6 +16,16 @@ h3 {
   font-size: 32px;
 }
 
+p {
+  font-family: 'Lora', serif;
+  line-height: 1.25em;
+}
+
+p em {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #C28C5E;
+}
 
 body {
   background-color: #CDBAAF;
@@ -55,6 +69,7 @@ nav li {
   display: inline-block;
   margin: 0 30px;
   width: 135px;
+  font-family: 'Lora', serif;
   line-height: 50px;
   white-space: nowrap;
   color: white;
@@ -145,4 +160,41 @@ footer p {
 footer ul li {
   font-size: 24px;
 }
+
+footer address{
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+footer fieldset {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+footer legend {
+  font-size: 20px;
+}
+
+footer input[type='email'] {
+  width: 300px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+footer input[type='submit'] {
+  width: 150px;
+  height: 39px;
+  border: none;
+  border-radius: 30px;
+  background-color: #96654A;
+  color: white;
+}
+
+footer input[type='submit']:hover {
+  background-color: white;
+  transition: background-color 350ms ease-in;
+  color: #96654A;
+  border: 2px solid #96654A;
+}
+
 
