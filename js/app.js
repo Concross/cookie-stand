@@ -128,7 +128,6 @@ var createHoursHeaderRow = function () {
   }
 
   createElAndAppend('th', 'Daily Total', trEl);
-
   salmonShopSectionEl.appendChild(trEl);
 };
 
