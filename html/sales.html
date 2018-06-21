@@ -22,10 +22,10 @@
     </div>
     <nav>
       <ul>
-        <a href="./index.html">
+        <a href="../index.html">
           <li>Home</li>
         </a>
-        <a href="./html/sales.html">
+        <a href="sales.html">
           <li>Sales</li>
         </a>
         <a href="../styleguide.html">
@@ -35,14 +35,39 @@
     </nav>
   </header>
 
+  <div id="page-container">
 
-  <h1>Salmon Cookie Shops</h1>
+    <h1 id="sales-page-header">Salmon Cookie Shops</h1>
 
-  <section>
-    <table id="salmon-shops">
+    <section id="sales-form-section">
+      <form id="new-shop-form">
+        <fieldset>
+          <legend>Add a new shop!</legend>
 
-    </table>
-  </section>
+          <label for="location">Location</label>
+          <input name="location" type="text" size="30" required=true />
+
+          <label for="minCustomers">Minimum Customers</label>
+          <input name="minCustomers" type="number" size="5" required=true />
+
+          <label for="maxCustomers">Maximum Customers</label>
+          <input name="maxCustomers" type="number" size="5" required=true />
+
+          <label for="avgCookiesPerCustomer">Average cookies per customer</label>
+          <input name="avgCookiesPerCustomer" type="number" step="any" size="5" required=true />
+
+          <button id="addNewShopBtn"type="submit">Add Shop</button>
+
+        </fieldset>
+      </form>
+    </section>
+    <section>
+      <table id="salmon-shops">
+
+      </table>
+    </section>
+
+  </div>
 
   <footer id="home-footer">
     <section id="locations-hours-footer">
