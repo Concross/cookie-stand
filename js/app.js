@@ -11,17 +11,27 @@ var newShopForm = document.getElementById('new-shop-form');
 ************************************/
 function handleAddNewShop(event) {
   event.preventDefault();
+
+  var exists = checkIfExistsAndUpdate(event);
   // Grab values from input fields
   var newShopLocation = event.target.location.value;
   var newShopMinCustomers = event.target.minCustomers.value;
   var newShopMaxCustomers = event.target.maxCustomers.value;
   var newAvgCookiesPerCustomer = event.target.avgCookiesPerCustomer.value;
 
+  // Clear fields
+  event.target.location.value = null;
+  event.target.minCustomers.value = null;
+  event.target.maxCustomers.value = null;
+  event.target.avgCookiesPerCustomer.value = null;
+
   // Create new SalmonCookieStore object for new shop
-  new SalmonCookieStore(newShopLocation, newShopMinCustomers, newShopMaxCustomers, newAvgCookiesPerCustomer);
-  // Clear old table, render new
-  salmonShopSectionEl.innerHTML = '';
-  renderSalesTable();
+  if (!exists){
+    new SalmonCookieStore(newShopLocation, newShopMinCustomers, newShopMaxCustomers, newAvgCookiesPerCustomer);
+    // Clear old table, render new
+    salmonShopSectionEl.innerHTML = '';
+    renderSalesTable();
+  }
 };
 
 /***********************************
@@ -100,6 +110,16 @@ SalmonCookieStore.prototype.render = function () {
 /***********************************
 *          HELPER FUNCTIONS        *
 ************************************/
+function checkIfExistsAndUpdate(event){
+
+  for(var i = 0; i < salmonCookieStoresArray.length; i++){
+    if(event.target.location.value.toLowerCase() === salmonCookieStoresArray[i].storeName.toLowerCase()){
+      console.log('these match');
+      return true;
+    }
+  }
+}
+
 var calcAllShopsDailyTotal = function () {
   var allShopsDailyTotal = 0;
   for (var store in salmonCookieStoresArray) {
