@@ -147,18 +147,16 @@ footer {
 footer section {
   float: left;
   margin: 0 50px 0;
+  color: white;
 }
 
 footer h3 {
   margin: 0 0 10px 0;
 }
 
-footer p {
-  margin: 0 0 5px 0;
-}
-
 footer ul li {
-  font-size: 24px;
+  font-size: 18px;
+  line-height: 1.10em;
 }
 
 footer address{
@@ -167,7 +165,7 @@ footer address{
 }
 
 footer fieldset {
-  border: 1px solid black;
+  border: 1px solid #96654A;
   padding: 15px;
 }
 
