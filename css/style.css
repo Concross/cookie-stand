@@ -1,0 +1,198 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant', serif;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 48px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+p {
+  font-family: 'Lora', serif;
+  line-height: 1.25em;
+}
+
+p em {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #C28C5E;
+}
+
+body {
+  background-color: #CDBAAF;
+}
+header {
+  height: 296px;
+  margin-bottom: 30px;
+  position: relative;
+  background-color: #ABA78F;
+}
+
+header img {
+  display: block;
+  margin: auto;
+  opacity: 0.70;
+}
+
+header h1 {
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 52px;
+  font-weight: bold;
+  color: white;
+}
+
+nav {
+  max-width: 100%;
+  background-color: #333024;
+}
+
+nav ul {
+  max-width: 960px;
+  text-align: center;
+  margin: auto;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 30px;
+  width: 135px;
+  font-family: 'Lora', serif;
+  line-height: 50px;
+  white-space: nowrap;
+  color: white;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+main {
+  max-width: 960px;
+  margin: auto;
+}
+
+main section {
+  margin: 0 auto 30px auto;
+}
+
+main section:first-child, main section:nth-child(2) {
+  text-align: center;
+  width: 75%;
+}
+
+main section:nth-child(2){
+  background-color: #C28C5E;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+main section article {
+  float: left;
+  width: 50%;
+  margin: 0 30px 30px 0;
+}
+
+main section article h2 {
+  width: 100%;
+  margin: 20px auto 30px auto;
+}
+
+main section article ul {
+  font-size: 16px;
+}
+
+main section article ul li {
+  text-align: left;
+  margin-left: 66px;
+  font-size: 18px;
+  line-height: 1.188em;
+}
+
+main section article ul li:before {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 30px;
+    background-size: 30px;
+    background-image: url("../img/salmon.png");
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+main section:nth-child(3) {
+  text-align: center;
+}
+
+footer {
+  height: 175px;
+  background-color: #333024;
+  padding: 1.5em;
+}
+
+footer section {
+  float: left;
+  margin: 0 50px 0;
+  color: white;
+}
+
+footer h3 {
+  margin: 0 0 10px 0;
+}
+
+footer ul li {
+  font-size: 18px;
+  line-height: 1.10em;
+}
+
+footer address{
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+footer fieldset {
+  border: 1px solid #96654A;
+  padding: 15px;
+}
+
+footer legend {
+  font-size: 20px;
+}
+
+footer input[type='email'] {
+  width: 300px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+footer input[type='submit'] {
+  width: 150px;
+  height: 39px;
+  border: none;
+  border-radius: 30px;
+  background-color: #96654A;
+  color: white;
+}
+
+footer input[type='submit']:hover {
+  background-color: white;
+  transition: background-color 350ms ease-in;
+  color: #96654A;
+  border: 2px solid #96654A;
+}
+
+
