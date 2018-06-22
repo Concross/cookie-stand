@@ -43,6 +43,7 @@ newShopForm.addEventListener('submit', handleAddNewShop);
  *   Salmon Cookie Object Segment  *
  ***********************************/
 var salmonCookieStoresArray = [];
+var hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 // Instantiate new SalmonCookieStore objects
 new SalmonCookieStore('College and Pence', 23, 65, 6.3);
@@ -59,13 +60,11 @@ function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, av
   this.avgCookiesPerCustomer = parseFloat(avgCookiesPerCustomer);
   this.hourlyCookiesArray = [];
   this.dailyCookiesTotal = 0;
-  this.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+  this.hoursOpenArray = hoursOpenArray;
 
   // Add this object instance to the front of the stores Array
   salmonCookieStoresArray.unshift(this);
 }
-// Open Hours array for a universal reference
-SalmonCookieStore.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 // Method that returns a random number of customers within an objects min/max
 SalmonCookieStore.prototype.randomHourlyCustomers = function () {
@@ -140,8 +139,8 @@ var createHoursHeaderRow = function () {
   var trEl = document.createElement('tr');
   createElAndAppend('th', 'Store Locations', trEl);
 
-  for (var hour in SalmonCookieStore.hoursOpenArray) {
-    createElAndAppend('th', SalmonCookieStore.hoursOpenArray[hour], trEl);
+  for (var hour in hoursOpenArray) {
+    createElAndAppend('th', hoursOpenArray[hour], trEl);
   }
 
   createElAndAppend('th', 'Daily Total', trEl);
@@ -154,7 +153,7 @@ var createFooterRow = function () {
 
   createElAndAppend('th', 'Hourly Totals', trEl);
 
-  for (var i = 0; i < SalmonCookieStore.hoursOpenArray.length; i++) {
+  for (var i = 0; i < hoursOpenArray.length; i++) {
     var allShopsHourlyTotal = 0;
     for (var store in salmonCookieStoresArray) {
       allShopsHourlyTotal += salmonCookieStoresArray[store].hourlyCookiesArray[i];
