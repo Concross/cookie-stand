@@ -187,6 +187,73 @@ main form input[type='number'] {
   float: right;
   clear: right;
 }
+main form input[type='submit'] {
+  width: 50%;
+  float: right;
+  clear: both;
+  height: 39px;
+  margin: 5px auto;
+  border: none;
+  border-radius: 30px;
+  background-color: #333024;
+  color: white;
+}
+
+main form input[type='submit']:hover {
+background-color: #555;
+transition: background-color 350ms ease-in;
+color: white;
+border: 2px solid #555;
+}
+/**************************************************
+*              CUSTOM TABLE STYLE                 *
+***************************************************/
+
+#table-style-guide {
+  margin: auto;
+}
+
+table {
+  font-family: 'Open+Sans', sans-serif;
+  max-width: 100%;
+  margin: 25px auto 25px -100px;
+  border: 2px solid black;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+th, td {
+  border: 1px solid #ABA78F;
+  padding: 12px 15px;
+}
+
+th {
+  font-weight: bold;
+  background: #333024;
+  color: white;
+  white-space: pre-wrap;
+}
+
+tr:last-child {
+  border-top: 2px solid #333024;
+  background: #96654A;
+}
+
+tr:last-child > th:last-child {
+  background: #C28C5E;
+  border: 1px solid black;
+}
+
+tr:last-child > th:first-child {
+  border: 2px solid black;
+}
+
+td:last-child, tr:last-child > th:last-child{
+  border-left: 2px solid #333024;
+  background: #C28C5E;
+}
+
+/* End Custom Table Layout */
 
 footer {
   height: 175px;
