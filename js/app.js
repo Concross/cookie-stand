@@ -9,20 +9,29 @@ var newShopForm = document.getElementById('new-shop-form');
 /***********************************
 *         EVENT HANDLERS           *
 ************************************/
-
 function handleAddNewShop(event) {
   event.preventDefault();
+
+  var exists = checkIfExistsAndUpdate(event);
   // Grab values from input fields
   var newShopLocation = event.target.location.value;
   var newShopMinCustomers = event.target.minCustomers.value;
   var newShopMaxCustomers = event.target.maxCustomers.value;
   var newAvgCookiesPerCustomer = event.target.avgCookiesPerCustomer.value;
 
+  // Clear fields
+  event.target.location.value = null;
+  event.target.minCustomers.value = null;
+  event.target.maxCustomers.value = null;
+  event.target.avgCookiesPerCustomer.value = null;
+
   // Create new SalmonCookieStore object for new shop
-  new SalmonCookieStore(newShopLocation, newShopMinCustomers, newShopMaxCustomers, newAvgCookiesPerCustomer);
-  // Clear old table, render new
-  salmonShopSectionEl.innerHTML = '';
-  renderSalesTable();
+  if (!exists){
+    new SalmonCookieStore(newShopLocation, newShopMinCustomers, newShopMaxCustomers, newAvgCookiesPerCustomer);
+    // Clear old table, render new
+    salmonShopSectionEl.innerHTML = '';
+    renderSalesTable();
+  }
 };
 
 /***********************************
@@ -33,7 +42,6 @@ newShopForm.addEventListener('submit', handleAddNewShop);
 /***********************************
  *   Salmon Cookie Object Segment  *
  ***********************************/
-// Array for all salmon store objects
 var salmonCookieStoresArray = [];
 
 // Instantiate new SalmonCookieStore objects
@@ -53,7 +61,7 @@ function SalmonCookieStore(storeName, minHourlyCustomers, maxHourlyCustomers, av
   this.dailyCookiesTotal = 0;
   this.hoursOpenArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-  // Add this object instance to the stores Array
+  // Add this object instance to the front of the stores Array
   salmonCookieStoresArray.unshift(this);
 }
 // Open Hours array for a universal reference
@@ -102,6 +110,15 @@ SalmonCookieStore.prototype.render = function () {
 /***********************************
 *          HELPER FUNCTIONS        *
 ************************************/
+function checkIfExistsAndUpdate(event){
+
+  for(var i = 0; i < salmonCookieStoresArray.length; i++){
+    if(event.target.location.value.toLowerCase() === salmonCookieStoresArray[i].storeName.toLowerCase()){
+      return true;
+    }
+  }
+}
+
 var calcAllShopsDailyTotal = function () {
   var allShopsDailyTotal = 0;
   for (var store in salmonCookieStoresArray) {
@@ -128,7 +145,6 @@ var createHoursHeaderRow = function () {
   }
 
   createElAndAppend('th', 'Daily Total', trEl);
-
   salmonShopSectionEl.appendChild(trEl);
 };
 
