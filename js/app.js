@@ -3,7 +3,7 @@
 /***********************************
  * Global Variables for DOM Access *
  ***********************************/
-var salmonShopSectionEl = document.getElementById('salmon-shops');
+var salmonShopSectionEl = document.getElementById('salmon-shops-table');
 var newShopForm = document.getElementById('new-shop-form');
 
 /***********************************

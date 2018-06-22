@@ -12,53 +12,95 @@
 </head>
 
 <body>
-  <img src="../img/salmon.png" alt="Salmon header image">
-  <h1>PAT'S
-    <br/>SALMON COOKIES</h1>
+  <header>
+    <img src="../img/salmon.png" alt="Salmon header image">
+    <h1>PAT'S
+      <br/>SALMON COOKIES</h1>
 
-  <nav>
-    <ul>
-      <li>
-        <a href="../index.html">Home</a>
-      </li>
-      <li>
-        <a href="#">Sales</a>
-      </li>
-      <li>
-        <a href="../styleguide.html">Style Guide</a>
-      </li>
-      <li>
-        <a href="#">Nav 4</a>
-      </li>
-    </ul>
+    <nav>
+      <ul>
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+        <li>
+          <a href="#">Sales</a>
+        </li>
+        <li>
+          <a href="../styleguide.html">Style Guide</a>
+        </li>
+        <li>
+          <a href="#">Nav 4</a>
+        </li>
+      </ul>
 
-  </nav>
+    </nav>
 
   </header>
 
   <main>
+
     <h1>Sales Projection</h1>
 
-    <section id="sales-form-section">
       <form id="new-shop-form">
         <fieldset>
           <legend>Add a new store</legend>
           <label for="location">Location</label>
           <input type="text" name="location" />
-
+          <div></div>
           <label for="minCustomers">Minimum Customers</label>
           <input type="number" name="minCustomers" />
-
+          <div></div>
           <label for="maxCustomers">Maximum Customers</label>
           <input type="number" name="maxCustomers" />
-
+          <div></div>
           <label for="avgCookiesPerCustomer">Avg Cookies Per Customer</label>
           <input type="number" step="any" name="avgCookiesPerCustomer" />
         </fieldset>
       </form>
+
+    <section>
+      <table id="salmon-shops-table"></table>
     </section>
 
   </main>
+
+  <footer>
+    <section>
+      <h3>Locations</h3>
+      <p>
+        <em>All locations open from 6am to 8pm</em>
+      </p>
+      <ul>
+        <li>College and Pence</li>
+        <li>Chandler and 14th</li>
+        <li>Fresno and 14th</li>
+        <li>Minnesota and Bond</li>
+        <li>NE Neff and NE Willamette</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Contact Us</h3>
+      <address>
+        Pat's Salmon Cookies
+        <br/> 42 Wallaby Way
+        <br/> Sydney, Australia
+        <br/> 555-555-555
+      </address>
+    </section>
+
+    <section>
+      <fieldset>
+        <legend>Join Our Newsletter</legend>
+        <form action="">
+          <input type="email" />
+          <input type="submit" value="Add me!" />
+        </form>
+      </fieldset>
+    </section>
+  </footer>
+
+  <script src="../js/app.js"></script>
 </body>
 
 </html>
